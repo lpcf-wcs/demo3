@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset='utf-8'>
+    <title></title>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        var json = null;
+        window.onload = function () {
+            var url = "data.json";
+            var request = new XMLHttpRequest();
+            request.open("get", url);
+            request.send(null);
+            request.onload = function () {
+                if (request.status == 200) {
+                    json = JSON.parse(request.responseText);
+                    for(var i=0;i<json.result.length;i++){
+                        console.log(json.result[i].title);
+                    }
+                    console.log(json);
+
+                    var img = '<img width="150px" height="100px" src="'+json.result[0].img+'"/>';
+                    var status = "<span>"+json.result[0].status_DISPLAY+"</span>";
+                    var title_helf = "<a href=''>"+json.result[0].title+"</a>";
+                    $('#json-title-one').after(title_helf);
+                    $('#json-time-one').after(json.result[0].time);
+                    $('#json-img-one').after(img);
+                    $('#json-status-one').after(status);
+
+                    var img1 = '<img width="150px" height="100px" src="'+json.result[1].img+'"/>';
+                    var status1 = "<span>"+json.result[1].status_DISPLAY+"</span>";
+                    var title_helf1 = "<a href=''>"+json.result[1].title+"</a>";
+                    $('#json-title-two').after(title_helf1);
+                    $('#json-time-two').after(json.result[1].time);
+                    $('#json-img-two').after(img1);
+                    $('#json-status-two').after(status1);
+
+                    var img2 = '<img width="150px" height="100px" src="'+json.result[2].img+'"/>';
+                    var status2 = "<span>"+json.result[2].status_DISPLAY+"</span>";
+                    var title_helf2 = "<a href=''>"+json.result[2].title+"</a>";
+                    $('#json-title-three').after(title_helf2);
+                    $('#json-time-three').after(json.result[2].time);
+                    $('#json-img-three').after(img2);
+                    $('#json-status-three').after(status2);
+
+                    var img3 = '<img width="150px" height="100px" src="'+json.result[3].img+'"/>';
+                    var status3 = "<span>"+json.result[3].status_DISPLAY+"</span>";
+                    var title_helf3 = "<a href=''>"+json.result[3].title+"</a>";
+                    $('#json-title-four').after(title_helf3);
+                    $('#json-time-four').after(json.result[3].time);
+                    $('#json-img-four').after(img3);
+                    $('#json-status-four').after(status3);
+
+                    var img4 = '<img width="150px" height="100px" src="'+json.result[4].img+'"/>';
+                    var status4 = "<span>"+json.result[4].status_DISPLAY+"</span>";
+                    var title_helf4 = "<a href=''>"+json.result[4].title+"</a>";
+                    $('#json-title-five').after(title_helf4);
+                    $('#json-time-five').after(json.result[4].time);
+                    $('#json-img-five').after(img4);
+                    $('#json-status-five').after(status4);
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<div class="index-banner">
+    <img width="510px" src="img/head.png">
+    <div class="index-banner-picture"><img src="img/picture.png" alt="banner"></div>
+    <div class="index-banner-button">
+        <input type="button" class="button1" style="width:60px; height:80px; margin-left: 80px; border:0; background: url(img/button1.png)"/>
+        <input type="button" class="button2" style="width:60px; height:80px; margin-left: 30px; border:0; background: url(img/button2.png)"/>
+        <input type="button" class="button3" style="width:60px; height:80px; margin-left: 30px; border:0; background: url(img/button3.png)"/>
+        <input type="button" class="button4" style="width:60px; height:80px; margin-left: 30px; border:0; background: url(img/button4.png)"/>
+    </div>
+</div>
+<div class="index-article">
+    <div class="index-article-title">
+        <h2>热门资讯</h2>
+    </div>
+
+    <div class="index-article-list">
+        <div class="index-article-img">
+            <img id="json-img-one"/>
+        </div>
+        <div class="index-article-font">
+            <h3 id="json-title-one"></h3>
+        </div>
+        <br>
+        <div class="index-article-time">
+            <span class="index-article-span-one" id="json-time-one"></span>
+            <span class="index-article-span-two" id="json-status-one"></span>
+        </div>
+    </div>
+
+    <div class="index-article-list">
+        <div class="index-article-img">
+            <img id="json-img-two" />
+        </div>
+        <div class="index-article-font">
+            <h3 id="json-title-two"></h3>
+        </div>
+        <br>
+        <div class="index-article-time">
+            <span class="index-article-span-one" id="json-time-two"></span>
+            <span class="index-article-span-two" id="json-status-two"></span>
+        </div>
+    </div>
+
+    <div class="index-article-list">
+        <div class="index-article-img">
+            <img id="json-img-three" />
+        </div>
+        <div class="index-article-font">
+            <h3 id="json-title-three"></h3>
+        </div>
+        <br>
+        <div class="index-article-time">
+            <span class="index-article-span-one" id="json-time-three"></span>
+            <span class="index-article-span-two" id="json-status-three"></span>
+        </div>
+    </div>
+
+    <div class="index-article-list">
+        <div class="index-article-img">
+            <img id="json-img-four" />
+        </div>
+        <div class="index-article-font">
+            <h3 id="json-title-four"></h3>
+        </div>
+        <br>
+        <div class="index-article-time">
+            <span class="index-article-span-one" id="json-time-four"></span>
+            <span class="index-article-span-two" id="json-status-four"></span>
+        </div>
+    </div>
+
+    <div class="index-article-list">
+        <div class="index-article-img">
+            <img id="json-img-five" />
+        </div>
+        <div class="index-article-font">
+            <h3 id="json-title-five"></h3>
+        </div>
+        <br>
+        <div class="index-article-time">
+            <span class="index-article-span-one" id="json-time-five"></span>
+            <span class="index-article-span-two" id="json-status-five"></span>
+        </div>
+    </div>
+</div>
+<script>
+</script>
+</body>
+</html>
